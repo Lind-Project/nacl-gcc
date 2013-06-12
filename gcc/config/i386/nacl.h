@@ -278,3 +278,7 @@ Boston, MA 02111-1307, USA.  */
     if (TARGET_NACL && optimize_size)					      \
       error ("-Os is not supported by the Native Client compiler");	      \
   } while (0)
+
+
+/* Profile counters are not available under Native Client. */
+#define NO_PROFILE_COUNTERS 1
