@@ -4,6 +4,12 @@
 	If __GLIBC__ is defined, refer to __pthread_key_create instead of
 	pthread_cancel.
 
+2011-06-18  H.J. Lu  <hongjiu.lu@intel.com>
+
+	* longlong.h (count_leading_zeros): Use long long builtin for
+	x86-64.
+	(count_trailing_zeros): Likewise.
+
 2010-01-21  Release Manager
 
 	* GCC 4.4.3 released.
