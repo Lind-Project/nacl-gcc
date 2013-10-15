@@ -88,7 +88,7 @@ Boston, MA 02111-1307, USA.  */
   "%{fnacl-library-mode:-nacl-library-mode} " \
   "%{fnacl-align-16:-nacl-align=4} " \
   "%{fnacl-align-32:-nacl-align=5} " \
-  "%{Ym,*} %{Yd,*} %{Wa,*:%*} %{m32:--32} %{m64:--64} " \
+  "%{Ym,*} %{Yd,*} %{Wa,*:%*} %{" SPEC_32 ":--32} %{" SPEC_64 ":--64} " \
   "%{!mno-sse2avx:%{mavx:-msse2avx}} %{msse2avx:%{!mavx:-msse2avx}}"
 
 #undef	LIB_SPEC
@@ -130,7 +130,8 @@ Boston, MA 02111-1307, USA.  */
 #endif
 
 #undef	LINK_SPEC
-#define LINK_SPEC "%{" SPEC_64 ":-m elf64_nacl} %{" SPEC_32 ":-m elf_nacl} \
+#define LINK_SPEC \
+ "%{" SPEC_64 ":-m elf_x86_64_nacl} %{" SPEC_32 ":-m elf_i386_nacl} \
   %{shared:-shared} \
   %{!shared: \
     %{!static: \
