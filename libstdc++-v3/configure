@@ -4989,7 +4989,7 @@ freebsd* | dragonfly*)
   fi
   ;;
 
-gnu*)
+gnu* | nacl*)
   lt_cv_deplibs_check_method=pass_all
   ;;
 
@@ -41387,7 +41387,7 @@ fi;
                 if test "X$additional_includedir" = "X/usr/local/include"; then
                   if test -n "$GCC"; then
                     case $host_os in
-                      linux*) haveit=yes;;
+                      linux* | nacl*) haveit=yes;;
                     esac
                   fi
                 fi
@@ -41431,7 +41431,7 @@ fi;
                       if test "X$additional_libdir" = "X/usr/local/lib"; then
                         if test -n "$GCC"; then
                           case $host_os in
-                            linux*) haveit=yes;;
+                            linux* | nacl*) haveit=yes;;
                           esac
                         fi
                       fi
