@@ -116,15 +116,9 @@ __gthread_active_p (void)
    * TODO: change to reference a thread creation/destruction function
    *             when one becomes available.
    */
-  // This is a dirty workaround over our inability to use locks in NaCl x86-64.
-  // TODO(pasko): fix this by enabling correct builtins.
-#ifndef __x86_64__
   static void *const __gthread_active_ptr
     = __extension__ (void *) &__gthrw_(pthread_mutex_lock);
   return __gthread_active_ptr != 0;
-#else
-  return 0;
-#endif
 }
 
 #ifdef _LIBOBJC
