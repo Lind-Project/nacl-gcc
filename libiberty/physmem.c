@@ -25,10 +25,6 @@
 # include <unistd.h>
 #endif
 
-#if HAVE_SYS_PSTAT_H
-# include <sys/pstat.h>
-#endif
-
 #if HAVE_SYS_SYSMP_H
 # include <sys/sysmp.h>
 #endif
@@ -88,19 +84,6 @@ physmem_total (void)
     double pagesize = sysconf (_SC_PAGESIZE);
     if (0 <= pages && 0 <= pagesize)
       return pages * pagesize;
-  }
-#endif
-
-#if HAVE_PSTAT_GETSTATIC
-  { /* This works on hpux11.  */
-    struct pst_static pss;
-    if (0 <= pstat_getstatic (&pss, sizeof pss, 1, 0))
-      {
-	double pages = pss.physical_memory;
-	double pagesize = pss.page_size;
-	if (0 <= pages && 0 <= pagesize)
-	  return pages * pagesize;
-      }
   }
 #endif
 
@@ -192,21 +175,6 @@ physmem_available (void)
     double pagesize = sysconf (_SC_PAGESIZE);
     if (0 <= pages && 0 <= pagesize)
       return pages * pagesize;
-  }
-#endif
-
-#if HAVE_PSTAT_GETSTATIC && HAVE_PSTAT_GETDYNAMIC
-  { /* This works on hpux11.  */
-    struct pst_static pss;
-    struct pst_dynamic psd;
-    if (0 <= pstat_getstatic (&pss, sizeof pss, 1, 0)
-	&& 0 <= pstat_getdynamic (&psd, sizeof psd, 1, 0))
-      {
-	double pages = psd.psd_free;
-	double pagesize = pss.page_size;
-	if (0 <= pages && 0 <= pagesize)
-	  return pages * pagesize;
-      }
   }
 #endif
 

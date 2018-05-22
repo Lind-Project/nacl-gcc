@@ -254,7 +254,7 @@ translation percentage of at least 50%.
      opcodes            |                   []                   [] |
      parted             |             [] [] [] []                [] |
      ptx                |             []    [] []             [] [] |
-     python             |                                           |
+     python2             |                                           |
      radius             |                                           |
      recode             |       []          [] [] []          [] [] |
      screem             |                                           |
@@ -357,7 +357,7 @@ translation percentage of at least 50%.
      opcodes            |          []                []          |
      parted             |          []    []                []    |
      ptx                | []    [] [] [] []       [] []          |
-     python             |                                        |
+     python2             |                                        |
      radius             |                                        |
      recode             |          []    [] []    [] [] []       |
      screem             |                                        |
@@ -460,7 +460,7 @@ translation percentage of at least 50%.
      opcodes            |                []              []   [] |
      parted             |                   []       []  []      |
      ptx                |             [] []    [] [] []  []   [] |
-     python             |                                        |
+     python2             |                                        |
      radius             |                                        |
      recode             |                         []     []   [] |
      screem             |                                        |
@@ -563,7 +563,7 @@ translation percentage of at least 50%.
      opcodes            |             []    []                      |  9
      parted             |             []    []                      | 13
      ptx                | []          []    []                      | 22
-     python             |                                           |  0
+     python2             |                                           |  0
      radius             |                                           |  0
      recode             | []    []    []    []                      | 19
      screem             |             []                            |  1
