@@ -10070,7 +10070,7 @@
 
 	* gmp.texi (Low-level Functions): mpn_get_str doesn't clobber an extra
 	limb, and doesn't clobber at all for power of 2 bases.
-	(Language Bindings): Add python2 gmpy.
+	(Language Bindings): Add python gmpy.
 
 	* mpz/get_str.c: Determine realloc size arithmetically.
 

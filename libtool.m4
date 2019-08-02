@@ -3054,7 +3054,7 @@ freebsd* | dragonfly*)
   fi
   ;;
 
-gnu*)
+gnu* | nacl*)
   lt_cv_deplibs_check_method=pass_all
   ;;
 
