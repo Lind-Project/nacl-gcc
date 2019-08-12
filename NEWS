@@ -3200,7 +3200,7 @@ Other significant improvements
        Perhaps more importantly, this new feature finally allows (with
        careful planning) complete avoidance of symbol clashes when
        manually loading shared objects with RTLD_GLOBAL, thus finally
-       solving problems many projects such as python were forced to use
+       solving problems many projects such as python2 were forced to use
        RTLD_LOCAL for (with its resulting issues for C++ correctness). You
        can find more information about using these options at
        [11]http://gcc.gnu.org/wiki/Visibility.

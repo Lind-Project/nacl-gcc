@@ -49,7 +49,8 @@ extern void _fatal_insn (const char *, const_rtx, const char *, int, const char 
 /* None of these functions are suitable for ATTRIBUTE_PRINTF, because
    each language front end can extend them with its own set of format
    specifiers.  We must use custom format checks.  */
-#if GCC_VERSION >= 4001
+#if GCC_VERSION >= 4001  && (GCC_VERSION != 9001) /* 9.1.0 is buggy:
+https://gcc.gnu.org/PR90677  */
 #define ATTRIBUTE_GCC_DIAG(m, n) __attribute__ ((__format__ (GCC_DIAG_STYLE, m, n))) ATTRIBUTE_NONNULL(m)
 #else
 #define ATTRIBUTE_GCC_DIAG(m, n) ATTRIBUTE_NONNULL(m)
@@ -174,7 +175,8 @@ extern int exact_log2                  (unsigned HOST_WIDE_INT);
 extern int floor_log2                  (unsigned HOST_WIDE_INT);
 
 /* Inline versions of the above for speed.  */
-#if GCC_VERSION >= 3004
+#if GCC_VERSION >= 3004 && defined(__cplusplus)  && (GCC_VERSION != 9001) /* 9.1.0 is buggy:
+https://gcc.gnu.org/PR90677  */
 # if HOST_BITS_PER_WIDE_INT == HOST_BITS_PER_LONG
 #  define CLZ_HWI __builtin_clzl
 #  define CTZ_HWI __builtin_ctzl
