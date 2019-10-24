@@ -638,7 +638,7 @@ extern void c_write_global_declarations (void);
 /* In order for the format checking to accept the C frontend
    diagnostic framework extensions, you must include this file before
    toplev.h, not after.  */
-#if GCC_VERSION >= 4001  && (GCC_VERSION != 9001) /* 9.1.0 is buggy:
+#if GCC_VERSION >= 4001  && (GCC_VERSION < 9001) /* 9.1.0 is buggy:
 https://gcc.gnu.org/PR90677  */
 #define ATTRIBUTE_GCC_CDIAG(m, n) __attribute__ ((__format__ (GCC_DIAG_STYLE, m ,n))) ATTRIBUTE_NONNULL(m)
 #else
