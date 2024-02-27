@@ -240,7 +240,7 @@ Boston, MA 02111-1307, USA.  */
 /* mm0, mm1, mm2, mm3, mm4, mm5, mm6, mm7*/			\
      0,   0,   0,   0,   0,   0,   0,   0,			\
 /*  r8,  r9, r10, r11, r12, r13, r14, r15*/			\
-     2,   2,   2,   2,   2,   2,   2,   1,			\
+     2,   2,   2,   2,   2,   2,   1,   1,			\
 /*xmm8,xmm9,xmm10,xmm11,xmm12,xmm13,xmm14,xmm15*/		\
      2,   2,    2,    2,    2,    2,    2,    2 }
 #undef CALL_USED_REGISTERS
@@ -254,7 +254,7 @@ Boston, MA 02111-1307, USA.  */
 /* mm0, mm1, mm2, mm3, mm4, mm5, mm6, mm7*/			\
      1,   1,   1,   1,   1,   1,   1,   1,			\
 /*  r8,  r9, r10, r11, r12, r13, r14, r15*/			\
-     1,   1,   1,   1,   2,   2,   2,   1,			\
+     1,   1,   1,   1,   2,   2,   1,   1,			\
 /*xmm8,xmm9,xmm10,xmm11,xmm12,xmm13,xmm14,xmm15*/		\
      1,   1,    1,    1,    1,    1,    1,    1 }
 /* Leave is forbidden in NaCl mode */
